@@ -19,11 +19,9 @@ def rough_parse(txt):
 
         if line == "":
             empty_lines = empty_lines + 1
-            print(f"empty line {empty_lines}")
             if empty_lines >= 2:
                 # 2行以上の連続した空行は区切り
                 if len(partial_result) != 0:
-                    print("append")
                     ret.append(partial_result)
 
                 partial_result = {}
