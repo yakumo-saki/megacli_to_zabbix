@@ -19,28 +19,32 @@ def rough_parse(txt):
 
         if line == "":
             empty_lines = empty_lines + 1
+            print(f"empty line {empty_lines}")
             if empty_lines >= 2:
                 # 2行以上の連続した空行は区切り
-                ret.append(partial_result)
+                if len(partial_result) != 0:
+                    print("append")
+                    ret.append(partial_result)
+
                 partial_result = {}
                 empty_lines = 0
-                continue
-                
-
-        empty_lines = 0 # ここまでくれば空行ではないので連続空行カウントをリセット
-        if ":" in line:
-            pass
         else:
-            continue  # : が含まれないならそれは区切りとかヘッダなので無視
+            empty_lines = 0 # ここまでくれば空行ではないので連続空行カウントをリセット
+            if ":" in line:
+                pass
+            else:
+                continue  # : が含まれないならそれは区切りとかヘッダなので無視
 
-        splitted = line.split(":", 1)  # 分割は1回まで＝2個に分割
-        if len(splitted) != 2:
-            logger.debug(f"Len != 2: {line}")
-            continue  # 変な行
+            splitted = line.split(":", 1)  # 分割は1回まで＝2個に分割
+            if len(splitted) != 2:
+                logger.debug(f"Len != 2: {line}")
+                continue  # 変な行
 
-        key = splitted[0].strip()
-        val = splitted[1].strip()
-        partial_result[key] = val
+            key = splitted[0].strip()
+            val = splitted[1].strip()
+            partial_result[key] = val
+
+        # for
 
     if len(partial_result) != 0:
         ret.append(partial_result)

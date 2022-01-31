@@ -27,6 +27,8 @@ def send_device_discovery(result, discoveryKey, discoveryPHName):
   one_data = {"host": cfg.ZABBIX_HOST, "key": discoveryKey, "value": f"{valueStr}"}
   data["data"].append(one_data)
 
+  print(valueStr)
+
   result = send_to_zabbix(data)
   logger.info(result)
 
