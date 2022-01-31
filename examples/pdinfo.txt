@@ -1,0 +1,281 @@
+                                     
+Adapter #0
+
+Enclosure Device ID: N/A
+Slot Number: 0
+Drive's position: DiskGroup: 1, Span: 0, Arm: 0
+Enclosure position: N/A
+Device Id: 0
+WWN: 50014ee6ae84f602
+Sequence Number: 4
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 2.728 TB [0x15d50a3b0 Sectors]
+Non Coerced Size: 2.728 TB [0x15d40a3b0 Sectors]
+Coerced Size: 2.728 TB [0x15d400000 Sectors]
+Sector Size:  512
+Firmware state: Online, Spun Up
+Device Firmware Level: 0A80
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3d0946606c111501
+Connected Port Number: 3(path0) 
+Inquiry Data:      WD-WMC4N0604326WDC WD30EFRX-68EUZN0                    80.00A80
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 6.0Gb/s 
+Media Type: Hard Disk Device
+Drive:  Not Certified
+Drive Temperature :32C (89.60 F)
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Drive's NCQ setting : Enabled
+Port-0 :
+Port status: Active
+Port's Linkspeed: 6.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: N/A
+Slot Number: 1
+Drive's position: DiskGroup: 1, Span: 0, Arm: 1
+Enclosure position: N/A
+Device Id: 1
+WWN: 50014ee058ce4aa0
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 2.728 TB [0x15d50a3b0 Sectors]
+Non Coerced Size: 2.728 TB [0x15d40a3b0 Sectors]
+Coerced Size: 2.728 TB [0x15d400000 Sectors]
+Sector Size:  512
+Firmware state: Online, Spun Up
+Device Firmware Level: 0A80
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3d0946606c111500
+Connected Port Number: 0(path0) 
+Inquiry Data:      WD-WMC1T1313355WDC WD30EFRX-68AX9N0                    80.00A80
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 6.0Gb/s 
+Media Type: Hard Disk Device
+Drive:  Not Certified
+Drive Temperature :32C (89.60 F)
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Drive's NCQ setting : Enabled
+Port-0 :
+Port status: Active
+Port's Linkspeed: 6.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: N/A
+Slot Number: 2
+Drive's position: DiskGroup: 1, Span: 0, Arm: 2
+Enclosure position: N/A
+Device Id: 2
+WWN: 50014ee20a151e0d
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 2.728 TB [0x15d50a3b0 Sectors]
+Non Coerced Size: 2.728 TB [0x15d40a3b0 Sectors]
+Coerced Size: 2.728 TB [0x15d400000 Sectors]
+Sector Size:  512
+Firmware state: Online, Spun Up
+Device Firmware Level: 0A80
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3d0946606c111502
+Connected Port Number: 4(path0) 
+Inquiry Data:      WD-WCC4N1017539WDC WD30EFRX-68EUZN0                    80.00A80
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 6.0Gb/s 
+Media Type: Hard Disk Device
+Drive:  Not Certified
+Drive Temperature :29C (84.20 F)
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Drive's NCQ setting : Enabled
+Port-0 :
+Port status: Active
+Port's Linkspeed: 6.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: N/A
+Slot Number: 3
+Drive's position: DiskGroup: 1, Span: 0, Arm: 3
+Enclosure position: N/A
+Device Id: 3
+WWN: 50014ee602e398f3
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 2.728 TB [0x15d50a3b0 Sectors]
+Non Coerced Size: 2.728 TB [0x15d40a3b0 Sectors]
+Coerced Size: 2.728 TB [0x15d400000 Sectors]
+Sector Size:  512
+Firmware state: Online, Spun Up
+Device Firmware Level: 0A80
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3d0946606c111503
+Connected Port Number: 1(path0) 
+Inquiry Data:      WD-WMC1T1065633WDC WD30EFRX-68AX9N0                    80.00A80
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 6.0Gb/s 
+Media Type: Hard Disk Device
+Drive:  Not Certified
+Drive Temperature :30C (86.00 F)
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Drive's NCQ setting : Enabled
+Port-0 :
+Port status: Active
+Port's Linkspeed: 6.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: N/A
+Slot Number: 6
+Drive's position: DiskGroup: 0, Span: 0, Arm: 0
+Enclosure position: N/A
+Device Id: 6
+WWN: 5001b448ba5dc5fa
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 465.761 GB [0x3a386030 Sectors]
+Non Coerced Size: 465.261 GB [0x3a286030 Sectors]
+Coerced Size: 465.25 GB [0x3a280000 Sectors]
+Sector Size:  512
+Firmware state: Online, Spun Up
+Device Firmware Level: 20WD
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3d0946606c111506
+Connected Port Number: 5(path0) 
+Inquiry Data: 21186U807794        WDC  WDS500G2B0A-00SM50                 415020WD
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 6.0Gb/s 
+Media Type: Solid State Device
+Drive:  Not Certified
+Drive Temperature : N/A
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Drive's NCQ setting : Enabled
+Port-0 :
+Port status: Active
+Port's Linkspeed: 6.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: N/A
+Slot Number: 7
+Drive's position: DiskGroup: 0, Span: 0, Arm: 1
+Enclosure position: N/A
+Device Id: 7
+WWN: 5001b448b1dc6adc
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 465.761 GB [0x3a386030 Sectors]
+Non Coerced Size: 465.261 GB [0x3a286030 Sectors]
+Coerced Size: 465.25 GB [0x3a280000 Sectors]
+Sector Size:  512
+Firmware state: Online, Spun Up
+Device Firmware Level: 40RL
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3d0946606c111507
+Connected Port Number: 2(path0) 
+Inquiry Data: 200211A00D12        SanDisk SDSSDH3 500G                    411040RL
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 6.0Gb/s 
+Media Type: Solid State Device
+Drive:  Not Certified
+Drive Temperature : N/A
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Drive's NCQ setting : Enabled
+Port-0 :
+Port status: Active
+Port's Linkspeed: 6.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+
+Exit Code: 0x00

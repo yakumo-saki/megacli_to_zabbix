@@ -1,0 +1,218 @@
+zabbix_export:
+  version: '5.2'
+  date: '2022-01-31T12:13:34Z'
+  groups:
+    -
+      name: Storage
+  templates:
+    -
+      template: 'megacli to zabbix'
+      name: 'MegaCLI to ZABBIX v20220127 by yakumo-saki'
+      description: 'https://github.com/yakumo-saki/megacli_to_zabbix'
+      groups:
+        -
+          name: Storage
+      applications:
+        -
+          name: megacli
+      discovery_rules:
+        -
+          name: 'Adapter Discovery'
+          type: TRAP
+          key: megacli.lld.adapter
+          delay: '0'
+          description: 'Discovery for RAID Adapters'
+          item_prototypes:
+            -
+              name: BBU
+              type: TRAP
+              key: 'megacli.adapter.bbu[{#SASADDR}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'BBU State: Present or Absent'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Controller temperature'
+              type: TRAP
+              key: 'megacli.adapter.controller_temp[{#SASADDR}]'
+              delay: '0'
+              description: 'Controller temperature'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Critical Disks'
+              type: TRAP
+              key: 'megacli.adapter.critical_disks[{#SASADDR}]'
+              delay: '0'
+              units: disk
+              description: 'Physical Disks - Disks'
+              applications:
+                -
+                  name: megacli
+            -
+              name: Disks
+              type: TRAP
+              key: 'megacli.adapter.disks[{#SASADDR}]'
+              delay: '0'
+              units: disk
+              description: 'Physical Disks - Disks'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Failed Disks'
+              type: TRAP
+              key: 'megacli.adapter.failed_disks[{#SASADDR}]'
+              delay: '0'
+              units: disk
+              description: 'Physical Disks - Failed Disks'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Product Name'
+              type: TRAP
+              key: 'megacli.adapter.name[{#SASADDR}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'Product Name'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'ROC temperature'
+              type: TRAP
+              key: 'megacli.adapter.roc_temp[{#SASADDR}]'
+              delay: '0'
+              description: 'RAID on Chip temperature'
+              applications:
+                -
+                  name: megacli
+        -
+          name: 'Physical Drive Discovery'
+          type: TRAP
+          key: megacli.lld.pd
+          delay: '0'
+          description: 'Discovery for Physical Drives'
+          item_prototypes:
+            -
+              name: 'Drive Position'
+              type: TRAP
+              key: 'megacli.pd.drive_position[{#WWN}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'Drive''s position: DiskGroup: 1, Span: 0, Arm: 0'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Inquiry Data'
+              type: TRAP
+              key: 'megacli.pd.inquiry[{#WWN}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'Inquiry data. HDD Name + HDD Serial + Firmware version'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Media Error Count'
+              type: TRAP
+              key: 'megacli.pd.media_error[{#WWN}]'
+              delay: '0'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Other Error Count'
+              type: TRAP
+              key: 'megacli.pd.other_error[{#WWN}]'
+              delay: '0'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Predictive Failure Count'
+              type: TRAP
+              key: 'megacli.pd.predictive_failure[{#WWN}]'
+              delay: '0'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'Raw Size'
+              type: TRAP
+              key: 'megacli.pd.raw_size[{#WWN}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              applications:
+                -
+                  name: megacli
+            -
+              name: WWN
+              type: TRAP
+              key: 'megacli.pd.wwn[{#WWN}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              applications:
+                -
+                  name: megacli
+        -
+          name: 'Virtual Drive Discovery'
+          type: TRAP
+          key: megacli.lld.vd
+          delay: '0'
+          description: 'Discovery for Virtual Drives'
+          item_prototypes:
+            -
+              name: 'VD Name'
+              type: TRAP
+              key: 'megacli.vd.name[{#NAME}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'VD Name'
+              applications:
+                -
+                  name: megacli
+            -
+              name: 'RAID Level'
+              type: TRAP
+              key: 'megacli.vd.raid_level[{#NAME}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              applications:
+                -
+                  name: megacli
+            -
+              name: Size
+              type: TRAP
+              key: 'megacli.vd.size[{#NAME}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'VD Size'
+              applications:
+                -
+                  name: megacli
+            -
+              name: State
+              type: TRAP
+              key: 'megacli.vd.state[{#NAME}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              description: 'VD State Optimal or else'
+              applications:
+                -
+                  name: megacli
