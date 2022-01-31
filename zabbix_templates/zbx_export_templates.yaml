@@ -1,13 +1,13 @@
 zabbix_export:
   version: '5.2'
-  date: '2022-01-31T12:13:34Z'
+  date: '2022-01-31T14:00:00Z'
   groups:
     -
       name: Storage
   templates:
     -
       template: 'megacli to zabbix'
-      name: 'MegaCLI to ZABBIX v20220127 by yakumo-saki'
+      name: 'MegaCLI to ZABBIX v20220131 by yakumo-saki'
       description: 'https://github.com/yakumo-saki/megacli_to_zabbix'
       groups:
         -
@@ -216,3 +216,8 @@ zabbix_export:
               applications:
                 -
                   name: megacli
+              trigger_prototypes:
+                -
+                  expression: '{last(#1)}<>"Optimal"'
+                  name: 'VD Not optimal'
+                  priority: HIGH
