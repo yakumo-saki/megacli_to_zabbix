@@ -1,6 +1,6 @@
 zabbix_export:
   version: '5.2'
-  date: '2022-01-31T14:00:00Z'
+  date: '2022-01-31T14:46:23Z'
   groups:
     -
       name: Storage
@@ -24,7 +24,7 @@ zabbix_export:
           description: 'Discovery for RAID Adapters'
           item_prototypes:
             -
-              name: BBU
+              name: 'BBU [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.bbu[{#SASADDR}]'
               delay: '0'
@@ -35,16 +35,42 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Controller temperature'
+              name: 'Controller temperature [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.controller_temp[{#SASADDR}]'
               delay: '0'
+              history: 14d
+              trends: '0'
+              value_type: CHAR
               description: 'Controller temperature'
               applications:
                 -
                   name: megacli
             -
-              name: 'Critical Disks'
+              name: 'Controller Temperature (num) [{#SASADDR}]'
+              type: DEPENDENT
+              key: 'megacli.adapter.controller_temp_num[{#SASADDR}]'
+              delay: '0'
+              units: C
+              applications:
+                -
+                  name: megacli
+              preprocessing:
+                -
+                  type: RTRIM
+                  parameters:
+                    - '  degree Celcius'
+              master_item:
+                key: 'megacli.adapter.controller_temp[{#SASADDR}]'
+              trigger_prototypes:
+                -
+                  expression: '{last(#1)}>=70'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: '{last(#1)}<=68'
+                  name: 'Controller Overheating'
+                  priority: AVERAGE
+            -
+              name: 'Critical Disks [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.critical_disks[{#SASADDR}]'
               delay: '0'
@@ -53,8 +79,13 @@ zabbix_export:
               applications:
                 -
                   name: megacli
+              trigger_prototypes:
+                -
+                  expression: '{last(#1)}>0'
+                  name: 'Critical Disk Detected'
+                  priority: WARNING
             -
-              name: Disks
+              name: 'Disks [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.disks[{#SASADDR}]'
               delay: '0'
@@ -64,7 +95,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Failed Disks'
+              name: 'Failed Disks [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.failed_disks[{#SASADDR}]'
               delay: '0'
@@ -73,8 +104,13 @@ zabbix_export:
               applications:
                 -
                   name: megacli
+              trigger_prototypes:
+                -
+                  expression: '{last(#1)}>0'
+                  name: 'Failed Disk Detected'
+                  priority: HIGH
             -
-              name: 'Product Name'
+              name: 'Product Name [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.name[{#SASADDR}]'
               delay: '0'
@@ -85,14 +121,40 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'ROC temperature'
+              name: 'ROC temperature [{#SASADDR}]'
               type: TRAP
               key: 'megacli.adapter.roc_temp[{#SASADDR}]'
               delay: '0'
+              history: 14d
+              trends: '0'
+              value_type: CHAR
               description: 'RAID on Chip temperature'
               applications:
                 -
                   name: megacli
+            -
+              name: 'ROC Temperature (num) [{#SASADDR}]'
+              type: DEPENDENT
+              key: 'megacli.adapter.roc_temp_num[{#SASADDR}]'
+              delay: '0'
+              units: C
+              applications:
+                -
+                  name: megacli
+              preprocessing:
+                -
+                  type: RTRIM
+                  parameters:
+                    - '  degree Celcius'
+              master_item:
+                key: 'megacli.adapter.roc_temp[{#SASADDR}]'
+              trigger_prototypes:
+                -
+                  expression: '{last(#1)}>=70'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: '{last(#1)}<=68'
+                  name: 'ROC Overheating'
+                  priority: AVERAGE
         -
           name: 'Physical Drive Discovery'
           type: TRAP
@@ -101,7 +163,7 @@ zabbix_export:
           description: 'Discovery for Physical Drives'
           item_prototypes:
             -
-              name: 'Drive Position'
+              name: 'Drive Position [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.drive_position[{#WWN}]'
               delay: '0'
@@ -112,7 +174,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Inquiry Data'
+              name: 'Inquiry Data [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.inquiry[{#WWN}]'
               delay: '0'
@@ -123,7 +185,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Media Error Count'
+              name: 'Media Error Count [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.media_error[{#WWN}]'
               delay: '0'
@@ -131,7 +193,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Other Error Count'
+              name: 'Other Error Count [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.other_error[{#WWN}]'
               delay: '0'
@@ -139,7 +201,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Predictive Failure Count'
+              name: 'Predictive Failure Count [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.predictive_failure[{#WWN}]'
               delay: '0'
@@ -147,7 +209,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'Raw Size'
+              name: 'Raw Size [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.raw_size[{#WWN}]'
               delay: '0'
@@ -157,7 +219,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: WWN
+              name: 'WWN [{#WWN}]'
               type: TRAP
               key: 'megacli.pd.wwn[{#WWN}]'
               delay: '0'
@@ -174,7 +236,7 @@ zabbix_export:
           description: 'Discovery for Virtual Drives'
           item_prototypes:
             -
-              name: 'VD Name'
+              name: 'VD Name [{#NAME}]'
               type: TRAP
               key: 'megacli.vd.name[{#NAME}]'
               delay: '0'
@@ -185,7 +247,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: 'RAID Level'
+              name: 'RAID Level [{#NAME}]'
               type: TRAP
               key: 'megacli.vd.raid_level[{#NAME}]'
               delay: '0'
@@ -195,7 +257,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: Size
+              name: 'Size [{#NAME}]'
               type: TRAP
               key: 'megacli.vd.size[{#NAME}]'
               delay: '0'
@@ -206,7 +268,7 @@ zabbix_export:
                 -
                   name: megacli
             -
-              name: State
+              name: 'State [{#NAME}]'
               type: TRAP
               key: 'megacli.vd.state[{#NAME}]'
               delay: '0'
